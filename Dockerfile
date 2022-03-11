@@ -1,7 +1,7 @@
 # This will pull the latest python image 
 FROM ubuntu:latest
 # This will put files at the image '/otp_python/' folder.
-ADD server.py /otp_python/
+
 
 RUN apt-get update 
 
@@ -15,4 +15,4 @@ WORKDIR /OTP-DOCKER-UNI/
 # Expose port 9898 in the container
 EXPOSE 9898
 # This will execute the command
-CMD [ "python3", "server.py"]
+CMD [ "python3", "server/server.py"]
