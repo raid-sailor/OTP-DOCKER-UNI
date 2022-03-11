@@ -1,6 +1,7 @@
 import socket 
 import random
 import string
+import os 
 
 # set the port and the socket name 
 s = socket.socket()
@@ -9,7 +10,7 @@ port = 9898
 # bind the port together 
 s.bind(('', port))
 
-print('Socket binded to %s' %(port))
+
 
 s.listen(5)
 
@@ -19,12 +20,37 @@ result_str = ''.join(random.choice(string.ascii_letters) for i in range(12))
 # print the actual OTP 
 resultz = "Your One Time Password is: " + result_str
 
-# A while loop until the process is complete 
-while True:
+# A while loop 
 
-    c, addr = s.accept()
-    c.send(resultz.encode())
+def login():
 
-    c.close()
+    # a loop which will give a total of 3 attempts to get the password right  
+    for x in range(3):
 
-    break
+        # input for the username and password 
+
+        usr = input("Enter username: ")
+        psw = input("Enter password: ")
+        
+        # this is hardcoded for now but future versions will include a keychain function and other encrypted authz. 
+        if usr == "dan" and psw == "dan":
+            
+            
+            c, addr = s.accept()
+            c.send(resultz.encode())
+            os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
+            print("Sent OTP to client: " + result_str + "\n")
+            c.close()
+
+            break
+        
+
+        else:
+
+            print("Access Denied!")
+            print("Username or password incorrect, please try again.\n")
+    else:
+
+        print("Closing down.")
+
+login()

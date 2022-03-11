@@ -1,11 +1,9 @@
 import socket 
-import argparse
 import os
 
 s = socket.socket()
 port = 9898
-parser = argparse.ArgumentParser()
-host_ip = '0.0.0.0'
+host_ip = '127.0.0.1'
 
 def connect(port, host_ip):
 
@@ -34,13 +32,14 @@ def login():
             clear()
             connect(port,host_ip)
             break
+        
 
         else:
 
             print("Access Denied!")
             print("Username or password incorrect, please try again.\n")
     else:
-        
+
         print("Closing down.")
 
 login()
