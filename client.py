@@ -1,5 +1,4 @@
 import socket 
-import os
 
 s = socket.socket()
 port = 9898

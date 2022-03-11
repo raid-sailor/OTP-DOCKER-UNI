@@ -28,14 +28,14 @@ def login():
     for x in range(3):
 
         # input for the username and password 
-
-        usr = input("Enter username: ")
+        print("Download a client script 👉🏻 https://raw.githubusercontent.com/raid-sailor/OTP-DOCKER-UNI/main/client.py")
+        usr = input("\nEnter username: ")
         psw = input("Enter password: ")
         
         # this is hardcoded for now but future versions will include a keychain function and other encrypted authz. 
         if usr == "dan" and psw == "dan":
             
-            
+           
             c, addr = s.accept()
             c.send(resultz.encode())
             os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
