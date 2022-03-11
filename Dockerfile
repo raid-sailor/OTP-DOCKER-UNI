@@ -15,4 +15,8 @@ WORKDIR /OTP-DOCKER-UNI/
 # Expose port 9898 in the container
 EXPOSE 9898
 # This will execute the command
-CMD [ "python3", "server/server.py"]
+COPY server.py server.py
+COPY client.py client.py
+COPY run.sh run.sh
+RUN chmod 700 run.sh
+CMD ./run.sh
