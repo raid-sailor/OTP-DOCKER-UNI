@@ -54,5 +54,5 @@ def login():
 
         print("Closing down.")
 
-input("Download a client script 👉🏻 https://raw.githubusercontent.com/raid-sailor/OTP-DOCKER-UNI/main/client.py. Press enter to continue: ")
+print("Download a client script 👉🏻 https://raw.githubusercontent.com/raid-sailor/OTP-DOCKER-UNI/main/client.py.")
 login()

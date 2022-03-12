@@ -1,11 +1,8 @@
 # This will pull the latest python image 
-FROM ubuntu:latest
+FROM python:latest
 # This will put files at the image '/otp_python/' folder.
 
-
 RUN apt-get update 
-
-RUN apt-get install -y python3
 
 RUN apt-get install -y git
 
