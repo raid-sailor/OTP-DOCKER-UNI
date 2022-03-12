@@ -13,4 +13,8 @@ def connect(port, host_ip):
 
 while True: 
 
-    connect(port,host_ip)
+     try:
+        connect(port,host_ip)
+    
+     except OSError as error :
+        break
